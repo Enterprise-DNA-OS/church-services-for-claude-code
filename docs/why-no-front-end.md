@@ -1,24 +1,7 @@
-# Why there is no front end
+# Views without a front end
 
-Planning Center is a database with a subscription. The tables underneath it are ordinary: a few entities, a few relationships, a handful of workflows you repeat every week. What you pay for is the layer on top that lets people who do not write SQL get at those tables. Screens, filters, dashboards, forms.
+The coordinator asks for service plans, missing volunteers and follow-up. SQL views answer those questions and the shared renderer creates private read-only HTML under views/ and docs-out/. They are exportable reports, not a hosted app.
 
-That layer used to be the whole product, because talking to a database was hard. It is not hard any more. Open this folder in Claude Code, describe what you want, and it writes the query, runs it, and explains the answer. Ask a question the dashboard never had a chart for and you still get an answer.
+A phone app provides volunteer self-service, notifications, offline work and drag-and-drop planning. This base provides none of those interfaces. Children check-in hardware, pickup verification, live rehearsal playback and payment processing need separate systems. Enterprise DNA can scope appropriate screens and connections for a managed version.
 
-## What you gain
-
-- **Better answers.** A dashboard shows what the vendor decided to chart. Here you ask your own question, in your own words, and get it answered against your own data.
-- **No seats.** Everyone who needs to look can look. The bill does not grow with headcount.
-- **Your data in your Postgres.** Plain tables. Back them up, query them from anything, leave any time. There is no export step because there is nothing to leave.
-- **A process that matches you.** When your way of working changes, you add a command. You do not wait for a feature request to clear.
-
-## What you give up
-
-- **A visual board.** Stages are a table you ask about, not cards you drag.
-- **A phone app.** It runs where Claude Code runs.
-- **A vendor help desk.** This is open source. Enterprise DNA supports the installed version for businesses that want someone to call.
-
-## Who this fits
-
-Small teams who already use Claude Code, or who would rather learn to ask than learn another interface. If your team needs a screen to look at all day, keep Planning Center. If you need the answers more than the screens, this is cheaper, faster and yours.
-
-Installed and run for you: https://enterprisedna.co/omni/instead-of/planning-center
+Change brand.json for your business name, colours and logo. /new-view adds an agreed report; /customise changes the underlying rules. Do not publish generated reports containing personal data.

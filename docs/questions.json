@@ -1,0 +1,42 @@
+[
+  [
+    "Which upcoming roles still lack confirmed people?",
+    "roster-gaps"
+  ],
+  [
+    "Who has not replied to an upcoming assignment?",
+    "pending-replies"
+  ],
+  [
+    "Who has overdue follow-ups and upcoming assignments?",
+    "busy-with-followups"
+  ],
+  [
+    "Which child-facing roles still need confirmed volunteers?",
+    "unfilled-screened-roles"
+  ],
+  [
+    "Which planned songs need their permission evidence reviewed?",
+    "music-review"
+  ],
+  [
+    "Who has the heaviest roster over the next four weeks?",
+    "volunteer-load"
+  ],
+  [
+    "How much of each service remains unallocated?",
+    "plan-length"
+  ],
+  [
+    "Which campuses have the largest confirmed-person gaps?",
+    "campus-coverage"
+  ],
+  [
+    "Which assignments now conflict with a blockout or screening review?",
+    "schedule-conflicts"
+  ],
+  [
+    "How often have songs been used, and what is planned next?",
+    "song-history"
+  ]
+]

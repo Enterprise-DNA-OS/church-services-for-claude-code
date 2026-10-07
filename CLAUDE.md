@@ -1,43 +1,53 @@
-# Church Services for Claude Code: operating instructions
+# Church Services for Claude Code
 
-This file is the brain. Claude Code reads it at the start of every session. It says who this is for, how work gets done, and the one right way to do each recurring job.
+For a church coordinator managing service plans, volunteer commitments and follow-up. Configure the business name in brand.json.
 
-## Who this is for
+Read the matching recipe in .claude/commands before each recurring job. The single CLI is npm run church. Every answer starts with current data. Never invent a response, permission, screening result or record. Drafts stay private and never send. Resolve ambiguous names before writes. Do not delete records without explicit approval.
 
-- **Business:** [YOUR BUSINESS]
-- **Operator:** [YOUR NAME], [your role]
-- **What matters most:** [the one or two outcomes you care about]
+## Routing
 
-Fill this in once. A worker with context knows. A worker without it guesses.
+- /people: .claude/commands/people.md
+- /teams: .claude/commands/teams.md
+- /memberships: .claude/commands/memberships.md
+- /service-plans: .claude/commands/service-plans.md
+- /service-order: .claude/commands/service-order.md
+- /roster: .claude/commands/roster.md
+- /roster-gaps: .claude/commands/roster-gaps.md
+- /pending-replies: .claude/commands/pending-replies.md
+- /call-cycle: .claude/commands/call-cycle.md
+- /followups-due: .claude/commands/followups-due.md
+- /blockouts: .claude/commands/blockouts.md
+- /songs: .claude/commands/songs.md
+- /song-history: .claude/commands/song-history.md
+- /volunteer-load: .claude/commands/volunteer-load.md
+- /plan-length: .claude/commands/plan-length.md
+- /screening-due: .claude/commands/screening-due.md
+- /compliance: .claude/commands/compliance.md
+- /schedule-conflicts: .claude/commands/schedule-conflicts.md
+- /unfilled-screened-roles: .claude/commands/unfilled-screened-roles.md
+- /busy-with-followups: .claude/commands/busy-with-followups.md
+- /music-review: .claude/commands/music-review.md
+- /campus-coverage: .claude/commands/campus-coverage.md
+- /person: .claude/commands/person.md
+- /service: .claude/commands/service.md
+- /add: .claude/commands/add.md
+- /log: .claude/commands/log.md
+- /reply: .claude/commands/reply.md
+- /screening: .claude/commands/screening.md
+- /privacy-review: .claude/commands/privacy-review.md
+- /complete-followup: .claude/commands/complete-followup.md
+- /import: .claude/commands/import.md
+- /export: .claude/commands/export.md
+- /attention: .claude/commands/attention.md
+- /weekly-review: .claude/commands/weekly-review.md
+- /draft-roster: .claude/commands/draft-roster.md
+- /customise: .claude/commands/customise.md
+- /new-view: .claude/commands/new-view.md
 
-## How to work
+## Operations
 
-1. **Take a brief, not a script.** The operator describes the outcome. You run the right command and present the answer.
-2. **Read before you write.** Before drafting anything about a record, read its full history first.
-3. **Plain language.** Short sentences. No filler. Numbers in tables.
-4. **Silent success, loud problems.** No play-by-play. Say what broke and what you did about it.
-5. **Stop at the line.** Anything that sends, deletes, or faces a customer waits for a yes in this session.
+Read docs/cli.md for arguments, docs/compliance.md for rule scope, and docs/replace-planning-center.md before migration. Use npm run demo only in a disposable database. Never run it against real church records. The base is an operator tool, not a child check-in or payment system.
 
-## Routing table: one right way for each recurring job
+Database: DATABASE_URL for PostgreSQL, otherwise embedded PGlite under .data. One local process at a time. Personal records require controlled access, encrypted storage and backups. Do not upload exports or database contents to public repositories.
 
-| When the operator asks for... | Use this |
-|---|---|
-| <!-- TODO(author): one row per slash command --> | `/...` |
-
-If an ask fits nothing here, run the CLI directly (`npm run <cli> -- --help`) and then propose a new command for it.
-
-## Hard rules
-
-- Never send email or messages from here. Draft to `drafts/`, a person sends.
-- Never delete records without an explicit yes in this session. Prefer marking closed or archived.
-- Never invent a record. If a name is ambiguous, list the candidates and ask.
-- The database is the source of truth. If the answer is not in it, say so.
-
-## Where things live
-
-- `scripts/` the CLI. `scripts/lib/db.mjs` picks `DATABASE_URL` (Postgres, Supabase) or the embedded database in `.data/`.
-- `supabase/migrations/` the schema, plain SQL. `npm run migrate` applies it.
-- `.claude/commands/` the slash commands. Add one every time the same ask comes twice.
-- `docs/` the thesis and the guide for moving off Planning Center.
-
-Built by Enterprise DNA. Installed and run for you as part of Omni: https://enterprisedna.co/omni/instead-of/planning-center
+Omni by Enterprise DNA: https://enterprisedna.co/omni/instead-of/planning-center

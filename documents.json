@@ -1,11 +1,47 @@
 [
   {
-    "name": "example",
-    "title": "TODO(author): the first document this industry must produce",
-    "for_each": "select gen_random_uuid() as id, 'Example' as name",
-    "file": "name",
+    "name": "service-sheet",
+    "title": "Draft order of service",
+    "for_each": "select id,code from church.services where status='planned'",
+    "file": "code",
     "sections": [
-      { "title": "Details", "sql": "select 'replace me' as item, $1::text as record_id" }
+      {
+        "title": "Service",
+        "sql": "select name,starts_at,ends_at,campus from church.services where id=$1"
+      },
+      {
+        "title": "Running order",
+        "sql": "select position,name,minutes,musical_key from church.service_order where service_id=$1 order by position"
+      },
+      {
+        "title": "Assigned volunteers",
+        "sql": "select team,role,volunteer,status from church.roster where service_id=$1 order by team,role"
+      }
+    ]
+  },
+  {
+    "name": "team-roster",
+    "title": "Draft team roster",
+    "for_each": "select id,code from church.teams",
+    "file": "code",
+    "sections": [
+      {
+        "title": "Upcoming assignments",
+        "sql": "select s.code service,s.starts_at,r.name role,p.name volunteer,a.status from church.assignments a join church.roles r on r.id=a.role_id join church.services s on s.id=r.service_id join church.people p on p.id=a.person_id where r.team_id=$1 and s.status='planned' and s.starts_at>=current_date order by s.starts_at"
+      }
+    ]
+  },
+  {
+    "name": "followup-letter",
+    "title": "Internal follow-up draft",
+    "for_each": "select id,code from church.followups where status='open'",
+    "file": "code",
+    "sections": [
+      {
+        "title": "For review by the coordinator",
+        "note": "Internal brief only. Write and approve the actual message before sending through your usual channel.",
+        "sql": "select p.name recipient,f.name subject,f.owner,f.due_on,f.purpose from church.followups f join church.people p on p.id=f.person_id where f.id=$1"
+      }
     ]
   }
 ]

@@ -1,0 +1,80 @@
+{
+  "people": [
+    "code",
+    "name",
+    "email",
+    "active",
+    "screening_reference",
+    "screening_review_on",
+    "privacy_review_on"
+  ],
+  "teams": [
+    "code",
+    "name",
+    "requires_screening"
+  ],
+  "memberships": [
+    "code",
+    "person_id",
+    "team_id"
+  ],
+  "services": [
+    "code",
+    "name",
+    "starts_at",
+    "ends_at",
+    "campus",
+    "status"
+  ],
+  "roles": [
+    "code",
+    "service_id",
+    "team_id",
+    "name",
+    "needed"
+  ],
+  "assignments": [
+    "code",
+    "role_id",
+    "person_id",
+    "status"
+  ],
+  "blockouts": [
+    "code",
+    "person_id",
+    "starts_at",
+    "ends_at",
+    "reason"
+  ],
+  "songs": [
+    "code",
+    "name",
+    "author",
+    "licence_reference",
+    "licence_review_on"
+  ],
+  "items": [
+    "code",
+    "service_id",
+    "song_id",
+    "name",
+    "position",
+    "minutes",
+    "musical_key"
+  ],
+  "followups": [
+    "code",
+    "person_id",
+    "name",
+    "owner",
+    "due_on",
+    "status",
+    "purpose"
+  ],
+  "notes": [
+    "code",
+    "person_id",
+    "author",
+    "body"
+  ]
+}
