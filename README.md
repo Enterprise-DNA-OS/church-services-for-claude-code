@@ -4,7 +4,7 @@ Service plans, volunteer schedules, song history and follow-up in a database you
 
 | Do it yourself | We customise it | We run it for you |
 |---|---|---|
-| Free code. Install and operate it. Hosting and agent costs remain yours. | Your fields, rules, screens and Planning Center export mapping. [Discuss your version](https://enterprisedna.co/omni/book?offer=replace-software&utm_campaign=planning-center&utm_medium=github). | Omni by Enterprise DNA installs and operates it for one setup fee, then a retainer. [See the offer](https://enterprisedna.co/omni/instead-of/planning-center). |
+| Free code. Install and operate it. Hosting and agent costs remain yours. | Your fields, rules, screens and Planning Center export mapping. [Discuss your version](https://enterprisedna.co/omni/book?offer=replace-software&utm_campaign=planning-center&utm_medium=github). | Omni by Enterprise DNA installs and operates it for one setup fee, then a retainer. [See the offer](https://enterprisedna.co/omni/instead-of/planning-center?utm_source=github&utm_medium=readme&utm_campaign=planning-center). |
 
 ## Start with fictional data
 
