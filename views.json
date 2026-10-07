@@ -13,7 +13,7 @@
       },
       {
         "title": "plan-length",
-        "sql": "select s.code,s.name,extract(epoch from (s.ends_at-s.starts_at))/60 planned_minutes,coalesce(sum(i.minutes),0)::int item_minutes,(extract(epoch from (s.ends_at-s.starts_at))/60-coalesce(sum(i.minutes),0)) spare_minutes from church.services s left join church.items i on i.service_id=s.id where s.status='planned' group by s.id order by s.starts_at"
+        "sql": "select s.code,s.name,extract(epoch from (s.ends_at-s.starts_at))::float8/60 planned_minutes,coalesce(sum(i.minutes),0)::int item_minutes,(extract(epoch from (s.ends_at-s.starts_at))::float8/60-coalesce(sum(i.minutes),0)) spare_minutes from church.services s left join church.items i on i.service_id=s.id where s.status='planned' group by s.id order by s.starts_at"
       }
     ]
   },
